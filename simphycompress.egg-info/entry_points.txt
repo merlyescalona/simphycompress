@@ -1,0 +1,3 @@
+[console_scripts]
+simphycompress = simphycompress.__main__:main
+

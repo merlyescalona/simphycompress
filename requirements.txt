@@ -1,0 +1,11 @@
+argparse
+ConfigParser
+datetime
+itertools
+logging
+numpy
+scipy
+setuptools
+numpy
+random
+sqlite3

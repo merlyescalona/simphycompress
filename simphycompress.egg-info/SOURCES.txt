@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+bin/simphycompress
+simphycompress/__init__.py
+simphycompress/__main__.py
+simphycompress/loggingformatter.py
+simphycompress/msatools.py
+simphycompress/simphycompress.py
+simphycompress.egg-info/PKG-INFO
+simphycompress.egg-info/SOURCES.txt
+simphycompress.egg-info/dependency_links.txt
+simphycompress.egg-info/entry_points.txt
+simphycompress.egg-info/not-zip-safe
+simphycompress.egg-info/requires.txt
+simphycompress.egg-info/top_level.txt
