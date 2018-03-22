@@ -56,10 +56,10 @@ Required arguments:
 - `-ip <input_prefix>, --input-prefix <input_prefix>`: Prefix of the FASTA filenames.
 
 Optional arguments:
-- `-n <N_seq_size>, --nsize <N_seq_size>`
-    Number of N's that will be introduced to separate the sequences selected. If the parameter is not set, the output file per replicate will be a multiple alignment sequence file, otherwise, the output will be a single sequence file per replicate consisting of a concatenation of the reference sequences selected separated with as many N's as set for this parameter.
-- `-l <log_level>, --log <log_level>`
-    Specified level of log that will be shown through the standard output. Entire log will be stored in a separate file. Values:['DEBUG', 'INFO', 'WARNING', 'ERROR']. Default: 'INFO'.
+- `-n <N_seq_size>, --nsize <N_seq_size>`: Number of N's that will be introduced to separate the sequences selected. If the parameter is not set, the output file per replicate will be a multiple alignment sequence file, otherwise, the output will be a single sequence file per replicate consisting of a concatenation of the reference sequences selected separated with as many N's as set for this parameter.
+- `-l <log_level>, --log <log_level>`: Specified level of log that will be shown through the standard output. Entire log will be stored in a separate file.
+    - Values:['DEBUG', 'INFO', 'WARNING', 'ERROR'].
+    - Default: 'INFO'.
 
 Information arguments:
   - `-v, --version`: Show program's version number and exit
