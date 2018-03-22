@@ -1,4 +1,4 @@
-import datetime,itertools,logging,os,sys, msatools,re, glob, gzip, shutil
+import datetime,logging,os,sys, msatools,re, glob, gzip, shutil
 import numpy as np
 import random as rnd
 
