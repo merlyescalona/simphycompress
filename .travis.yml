@@ -17,7 +17,7 @@ matrix:
                 - export PATH=$PATH:$(pwd)/INDELibleV1.03/src
                 - pip install -r requirements.txt
             install:
-                - python setup.py install --user
+                - python setup.py install
 
 script:
     - test/data.simulation.sh
