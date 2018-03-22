@@ -13,7 +13,6 @@ matrix:
                 - tar -zxf INDELibleV1.03.tar.gz
                 - pushd simphy && make && make clean && popd
                 - pushd INDELibleV1.03/src && rm MersenneTwister.h &&  wget https://raw.githubusercontent.com/merlyescalona/indelible-ngsphy/master/src/MersenneTwister.h && g++ -o indelible -O4 indelible.cpp  && popd
-                - pushd indelible-ngsphy && make && popd
                 - export PATH=$PATH:$(pwd)/simphy/bin
                 - export PATH=$PATH:$(pwd)/INDELibleV1.03/src
                 - pip install -r requirements.txt
