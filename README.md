@@ -1,6 +1,4 @@
 
-*SimPhy compress dataset*
-
 © 2018 Merly Escalona (<merlyescalona@uvigo.es>)
 
 University of Vigo, Spain, http://darwin.uvigo.es
@@ -23,9 +21,9 @@ To know more about the simulation pipeline scenario go to:
 
 - [SimPhy](https://github.com/adamallo/simphy) folder path
 - prefix of the existing [FASTA](https://en.wikipedia.org/wiki/FASTA_format) files
-- prefix for the output files
 - (optional) length of the N sequence that will be used to separate the sequences when concatenated
 
 # Output
 
-# Documentation
+- Modifications are made INPLACE. Meaning, files are concatenated and gzipped in the same SimPhy folder. And so,
+the other files are removed.
