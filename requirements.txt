@@ -4,6 +4,6 @@ datetime
 logging
 numpy
 scipy
+setuptools
 numpy
-random
 sqlite3
