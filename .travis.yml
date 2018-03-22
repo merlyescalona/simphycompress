@@ -1,0 +1,18 @@
+matrix:
+    include:
+        -   os: linux
+            dist: trusty
+            sudo: required
+            language: python
+            python: 2.7
+            before_install:
+                - sudo apt-get update -qq
+                - sudo apt-get install -qq libgsl0-dev libgmp-dev libmpfr-dev libsqlite0-dev indelible
+                - git clone https://github.com/adamallo/SimPhy simphy
+                - pushd simphy && make && make clean && popd
+                - export PATH=$PATH:$(pwd)/simphy/bin
+            install:
+                - python setup.py install --user
+
+script:
+    - test/data.simulation.sh
