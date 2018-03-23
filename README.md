@@ -1,22 +1,33 @@
 
 © 2018 Merly Escalona (<merlyescalona@uvigo.es>)
 
-University of Vigo, Spain, http://darwin.uvigo.es
+[Phylogenomics Lab](http://darwin.uvigo.es), [University of Vigo](htto://uvigo.es), Spain, 
 
 [![Build Status](https://travis-ci.org/merlyescalona/simphycompress.svg?branch=master)](https://travis-ci.org/merlyescalona/simphycompress)
 
 # SimPhy compress dataset
 
 This program allows to compress the number of files and file sizes of a SimPhy run.
+Concatenating all loci sequences into a single multiple sequence alignment file for all the different
+FASTA outputs (sequences with gaps, or sequences without gaps (`*_TRUE.fasta`)). They are concatenated
+with N sequences (as long as desired - `-n/--nsize` parameter). Gene tree files
+are shrunked into a sinlge gzipped tab-separated file with 2 columns:
+
+```
+filename           tree
+```
+Where, `filename` is the basename of the gene tree file (e.g. `g_trees00001.tree` -> `g_treees00001`)
+and `tree` corresponds to the content of such file.
 
 # Assumptions
 
-- We are working under a [SimPhy](https://github.com/adamallo/simphy) Meaning, it follows hierarchical  [SimPhy](https://github.com/adamallo/simphy) 's folder structure and sequence
-labeling.
+- We are working under a [SimPhy](https://github.com/adamallo/simphy) simulation.
+Follwing its hierarchical folder structure and sequence labeling.
 
-To know more about the simulation pipeline scenario go to:
+To know more about the simulation pipeline scenario go to [SimPhy's repository](https://github.com/adamallo/simphy), and/or check:
 
-- [SimPhy: A comprehensive simulator of gene family evolution ](https://github.com/adamallo/simphy)
+- Mallo D, de Oliveira Martins L, Posada D (2016) SimPhy: Phylogenomic Simulation of Gene, Locus and Species Trees. *Syst. Biol.* **65**(2) 334-344. doi: [http://dx.doi.org/10.1093/sysbio/syv082](http://dx.doi.org/10.1093/sysbio/syv082)
+
 
 # Input
 
