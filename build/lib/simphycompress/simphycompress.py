@@ -1,4 +1,4 @@
-import datetime,itertools,logging,os,sys, msatools,re, glob, gzip, shutil
+import datetime,logging,os,sys, msatools,re, glob, gzip, shutil
 import numpy as np
 import random as rnd
 
@@ -109,11 +109,14 @@ class SimPhyCompressDataset:
 		APPLOGGER.debug("IterateOverReplicate")
 		for index in range(0, self.numReplicates):
 			repID=index+1
+			APPLOGGER.debug("Replicate {}/{}".format(repID, self.numReplicates)))
 			if repID in self.filtered:
-				APPLOGGER.debug("Replicate {}/{}".format(repID, len(self.filtered)))
 				self.compressGeneTrees(repID)
 				self.concatLoci(repID)
 				self.removeUnzippedFasta(repID)
+			else:
+				self.compressGeneTrees(repID)
+
 
 	def concatLoci(self,repID):
 		data_true=None
