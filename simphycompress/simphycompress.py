@@ -109,7 +109,7 @@ class SimPhyCompressDataset:
 		APPLOGGER.debug("IterateOverReplicate")
 		for index in range(0, self.numReplicates):
 			repID=index+1
-			APPLOGGER.debug("Replicate {}/{}".format(repID, self.numReplicates)))
+			APPLOGGER.debug("Replicate {}/{}".format(repID, self.numReplicates))
 			if repID in self.filtered:
 				self.compressGeneTrees(repID)
 				self.concatLoci(repID)
