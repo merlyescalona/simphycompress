@@ -38,8 +38,8 @@ class SimPhyCompressDataset:
 
 	def checkArgs(self):
 		APPLOGGER.info("Checking arguments...")
-		APPLOGGER.info("\tSimPhy...")
 		simphydir=os.path.exists(self.path)
+		APPLOGGER.info("\tSimPhy: {}".format(simphydir))
 		########################################################################
 		if simphydir:
 			APPLOGGER.info("SimPhy folder exists:\t{0}".format(simphydir))
