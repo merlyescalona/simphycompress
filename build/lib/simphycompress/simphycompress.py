@@ -38,19 +38,14 @@ class SimPhyCompressDataset:
 
 	def checkArgs(self):
 		APPLOGGER.info("Checking arguments...")
-		APPLOGGER.info("\tSimPhy...")
 		simphydir=os.path.exists(self.path)
+		APPLOGGER.info("\tSimPhy: {}".format(simphydir))
 		########################################################################
 		if simphydir:
 			APPLOGGER.info("SimPhy folder exists:\t{0}".format(simphydir))
 		else:
-			exc_type, exc_obj, exc_tb = sys.exc_info()
-			fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-			ex="SimPhy folder does not exist."
-			message="{1} | File: {2} - Line:{3}\n\t{0}".format(\
-				ex,exc_type,fname, exc_tb.tb_lineno,\
-				"Please verify. Exiting.")
-			raise NRSException(False, message, datetime.datetime.now()-self.startTime)
+			ex="SimPhy folder does not exist.\nPlease verify. Exiting."
+			raise NRSException(False, ex, datetime.datetime.now()-self.startTime)
 		fileList=os.listdir(self.path)
 		for index in range(0,len(fileList)):
 			fileList[index]=os.path.abspath(os.path.join(self.path,fileList[index]))
@@ -131,12 +126,12 @@ class SimPhyCompressDataset:
 			inputfile_true=os.path.join(\
 				self.path,\
 				"{0:0{1}d}".format(repID, self.numReplicatesDigits),\
-				"{0}_{1:0{2}d}_TRUE.fasta".format(self.inputprefix,(locID+1), self.numLociPerReplicateDigits[locID])\
+				"{0}_{1:0{2}d}_TRUE.fasta".format(self.inputprefix,(locID+1), self.numLociPerReplicateDigits[repID-1])\
 			)
 			inputfile=os.path.join(\
 				self.path,\
 				"{0:0{1}d}".format(repID, self.numReplicatesDigits),\
-				"{0}_{1:0{2}d}.fasta".format(self.inputprefix,(locID+1), self.numLociPerReplicateDigits[locID])\
+				"{0}_{1:0{2}d}.fasta".format(self.inputprefix,(locID+1), self.numLociPerReplicateDigits[repID-1])\
 			)
 			if locID==0:
 				data=msatools.parseMSAFileWithDescriptions(inputfile)

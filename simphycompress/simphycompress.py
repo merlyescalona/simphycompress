@@ -126,12 +126,12 @@ class SimPhyCompressDataset:
 			inputfile_true=os.path.join(\
 				self.path,\
 				"{0:0{1}d}".format(repID, self.numReplicatesDigits),\
-				"{0}_{1:0{2}d}_TRUE.fasta".format(self.inputprefix,(locID+1), self.numLociPerReplicateDigits[locID])\
+				"{0}_{1:0{2}d}_TRUE.fasta".format(self.inputprefix,(locID+1), self.numLociPerReplicateDigits[repID-1])\
 			)
 			inputfile=os.path.join(\
 				self.path,\
 				"{0:0{1}d}".format(repID, self.numReplicatesDigits),\
-				"{0}_{1:0{2}d}.fasta".format(self.inputprefix,(locID+1), self.numLociPerReplicateDigits[locID])\
+				"{0}_{1:0{2}d}.fasta".format(self.inputprefix,(locID+1), self.numLociPerReplicateDigits[repID-1])\
 			)
 			if locID==0:
 				data=msatools.parseMSAFileWithDescriptions(inputfile)
